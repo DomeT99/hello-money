@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Icon } from "../../types/components";
+import { type Icon } from "../../types/components";
 
 const { classes, stroke, fill } = defineProps<Icon>();
 </script>
