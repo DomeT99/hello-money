@@ -2,7 +2,7 @@
 import HMIcon from "./HMIcon.vue";
 </script>
 <template>
-  <HMIcon classes="w-4 h-4" stroke="white">
+  <HMIcon classes="w-4 h-4" stroke="#4f46e5">
     <path
       stroke-linecap="round"
       stroke-linejoin="round"

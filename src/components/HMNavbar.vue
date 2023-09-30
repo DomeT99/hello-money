@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Component } from "vue";
 //Components
 import HMHomeIcon from "@/components/Icons/HMHomeIcon.vue";
 import HMExpenseIcon from "@/components/Icons/HMExpenseIcon.vue";
@@ -13,15 +14,19 @@ import router from "@/router";
 import { useLayoutStore } from "@/stores/layoutStore";
 const store = useLayoutStore();
 
-
-function changeRoute(newRoute: string) {
+function changeRoute(newRoute: string, icon: Component) {
   router.push(newRoute);
   changeTitle(newRoute);
+  changeIcon(icon);
 }
 
 function changeTitle(newRoute: string) {
   let title = newRoute.toUpperCase().slice(1);
   store.changeTitle(title);
+}
+
+function changeIcon(icon: Component) {
+  store.changeIcon(icon);
 }
 </script>
 <template>
@@ -40,47 +45,47 @@ function changeTitle(newRoute: string) {
       <ul class="mt-1">
         <li class="hover:bg-indigo-800">
           <a
-            @click="changeRoute('/')"
+            @click="changeRoute('/', HMHomeIcon)"
             class="h-10 px-1 flex justify-center items-center w-full focus:text-orange-500"
           >
-            <HMHomeIcon />
+            <HMHomeIcon stroke="white"/>
           </a>
         </li>
 
         <li class="hover:bg-indigo-800">
           <a
-            @click="changeRoute('/expense')"
+            @click="changeRoute('/expense', HMExpenseIcon)"
             class="h-10 px-1 flex justify-center items-center w-full focus:text-orange-500"
           >
-            <HMExpenseIcon />
+            <HMExpenseIcon stroke="white"/>
           </a>
         </li>
 
         <li class="hover:bg-indigo-800">
           <a
-            @click="changeRoute('/chart')"
+            @click="changeRoute('/chart', HMChartIcon)"
             class="h-10 px-1 flex justify-center items-center w-full focus:text-orange-500"
           >
-            <HMChartIcon />
+            <HMChartIcon stroke="white"/>
           </a>
         </li>
       </ul>
 
       <div class="mt-auto hover:bg-indigo-800">
         <a
-          @click="changeRoute('/settings')"
+          @click="changeRoute('/settings', HMSettingsIcon)"
           class="h-10 px-1 flex justify-center items-center w-full focus:text-orange-500"
         >
-          <HMSettingsIcon />
+          <HMSettingsIcon stroke="white"/>
         </a>
       </div>
 
       <div class="hover:bg-indigo-800">
         <a
-          @click="changeRoute('/profile')"
+          @click="changeRoute('/profile', HMUserIcon)"
           class="h-10 px-1 flex justify-center items-center w-full focus:text-orange-500"
         >
-          <HMUserIcon />
+          <HMUserIcon stroke="white"/>
         </a>
       </div>
     </aside>
