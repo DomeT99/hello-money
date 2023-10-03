@@ -15,3 +15,8 @@ export type Table<T> = {
   header: string[];
   body?: T[];
 };
+
+export type Button = {
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+};

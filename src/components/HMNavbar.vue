@@ -40,7 +40,10 @@ function changeIcon(icon: Component) {
       </div>
 
       <ul class="mt-1">
-        <li class="hover:bg-indigo-800" v-for="option of principalMenuOptions">
+        <li
+          class="hover:bg-indigo-800 focus:outline-none focus:shadow-outline transition duration-500 ease"
+          v-for="option of principalMenuOptions"
+        >
           <a
             @click="handleRoute(option.route, option.icon)"
             class="h-10 px-1 flex justify-center items-center w-full focus:text-orange-500"
@@ -51,7 +54,10 @@ function changeIcon(icon: Component) {
       </ul>
 
       <div class="mt-auto">
-        <div class="hover:bg-indigo-800" v-for="option of secondaryMenuOptions">
+        <div
+          class="hover:bg-indigo-800 focus:outline-none focus:shadow-outline transition duration-500 ease"
+          v-for="option of secondaryMenuOptions"
+        >
           <a
             @click="handleRoute(option.route, option.icon)"
             class="h-10 px-1 flex justify-center items-center w-full focus:text-orange-500"

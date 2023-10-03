@@ -2,6 +2,8 @@
 import { type Table } from "@/types/components";
 import { type Expenses } from "@/types/models";
 
+import HMButton from "@/components/HMButton.vue";
+
 const props = defineProps<Table<Expenses>>();
 </script>
 <template>
@@ -42,7 +44,7 @@ const props = defineProps<Table<Expenses>>();
               <div class="font-medium">{{ item.location }}</div>
             </td>
             <td class="p-2 whitespace-nowrap">
-              <button>Ciao</button>
+              <HMButton>Edit</HMButton>
             </td>
           </tr>
         </tbody>
