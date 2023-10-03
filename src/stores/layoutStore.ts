@@ -16,11 +16,9 @@ export const useLayoutStore = defineStore("layoutStore", () => {
     }
     titleHeader.value = title;
   }
-
   function changeIcon(icon: Component) {
     iconHeader.value = icon;
   }
-
   function $reset() {
     titleHeader.value = "HOME";
     iconHeader.value = HMHomeIcon;
