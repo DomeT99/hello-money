@@ -10,3 +10,8 @@ export type MenuOptions = {
   route: string;
   icon: Component;
 };
+
+export type Table<T> = {
+  header: string[];
+  body?: T[];
+};
