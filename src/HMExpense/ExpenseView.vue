@@ -11,7 +11,9 @@ const store = useExpensesStore();
 const expenses = computed(() => store.expenses);
 
 //Hooks
-onMounted(async () => await store.fetchExpenses());
+onMounted(async () => {
+  if (expenses.value.length <= 0) await store.fetchExpenses();
+});
 </script>
 
 <template>

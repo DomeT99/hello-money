@@ -1,14 +1,19 @@
-import type { Expenses } from "@/types/models";
-import { defineStore } from "pinia";
+//Vue
 import { ref } from "vue";
+//Types
+import type { Expenses } from "@/types/models";
+//Pinia
+import { defineStore } from "pinia";
+//Utils
+import { hmGet } from "@/utils/httpRequest";
 
 export const useExpensesStore = defineStore("expensesStore", () => {
   const expenses = ref<Expenses[]>([]);
 
   async function fetchExpenses() {
-    const data = await fetch(new URL("../data/expense.json", import.meta.url));
-    const res = await data.json();
-    expenses.value = res;
+    expenses.value = await hmGet<Expenses[]>(
+      import.meta.env.VITE_APP_EXPENSES_URL
+    );
   }
 
   return { expenses, fetchExpenses };
