@@ -1,10 +1,17 @@
 <script setup lang="ts">
 //Components
+import { onMounted, computed } from "vue";
 import HMExpenseTable from "./HMExpenseTable.vue";
 
 //Store
 import { useExpensesStore } from "@/stores/expensesStore";
-const { expenses } = useExpensesStore();
+const store = useExpensesStore();
+
+//Computed
+const expenses = computed(() => store.expenses);
+
+//Hooks
+onMounted(async () => await store.fetchExpenses());
 </script>
 
 <template>

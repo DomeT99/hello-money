@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Pizza",
+    "amount": 12.99,
+    "category": "Food",
+    "createdDate": "18th Jun"
+  },
+  {
+    "name": "Water",
+    "amount": 1,
+    "category": "Food",
+    "createdDate": "18th Jun"
+  },
+  {
+    "name": "Meat",
+    "amount": 15.99,
+    "category": "Food",
+    "createdDate": "18th Jun",
+    "location": "Restaurant"
+  }
+]
