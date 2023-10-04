@@ -23,7 +23,7 @@ export const useExpensesStore = defineStore("expensesStore", () => {
       category: "Sport",
       dateTransaction: new Date(),
       createdDate: new Date(),
-      location:"Sir William"
+      location: "Sir William",
     },
   ]);
 

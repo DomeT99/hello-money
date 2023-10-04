@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { RouterView } from "vue-router";
+//Components
 import HMBaseLayout from "./layouts/HMBaseLayout.vue";
+//Router
+import { RouterView } from "vue-router";
 </script>
 
 <template>
