@@ -19,4 +19,5 @@ export type Table<T> = {
 export type Button = {
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
+  rounded?: "md" | "lg" | "xl" | "full";
 };
